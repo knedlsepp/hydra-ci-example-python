@@ -25,8 +25,12 @@ in with pkgs; pyPkgs.buildPythonPackage rec {
     numpy
     pandas
     pint
+  ];
+
+  checkInputs = with pyPkgs; [
     pytest
     pytestrunner
+    pytest-flake8
   ];
 
   meta.maintainers = [ 
