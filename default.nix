@@ -2,8 +2,10 @@
 #   nix-shell
 # To build with pinned nixpkgs use:
 #   nix build
-# To build with your custom nixpkgs (from $NIX_PATH) use:
+# To develop/build with your custom nixpkgs (from $NIX_PATH) use:
+#   nix-shell --arg nixpkgs "<nixpkgs>"
 #   nix build --arg nixpkgs "<nixpkgs>"
+
 { nixpkgs ? (builtins.fetchGit {
     url = git://github.com/NixOS/nixpkgs-channels;
     ref = "nixos-18.03";
