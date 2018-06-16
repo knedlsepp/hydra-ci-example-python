@@ -1,5 +1,7 @@
 # To get a development shell use:
 #   nix-shell
+# To get a development shell for python2 use:
+#   nix-shell --arg getPythonVersion "(p: p.python2Packages)"
 # To build with pinned nixpkgs use:
 #   nix build
 # To develop/build with your custom nixpkgs (from $NIX_PATH) use:
