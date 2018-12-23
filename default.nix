@@ -13,7 +13,7 @@
     ref = "nixos-18.03";
     rev = "08d245eb31a3de0ad73719372190ce84c1bf3aee";
   })
-, getPythonVersion ? (p: p.python3Packages)
+, getPythonVersion ? (p: p.python2Packages)
 , src ? builtins.fetchGit ./.
 }:
 let
