@@ -35,7 +35,7 @@ in with pkgs; pyPkgs.buildPythonPackage rec {
     pytest-flake8
   ];
 
-  meta.maintainers = [ 
+  meta.maintainers = [
     "Josef Kemetmueller <josef.kemetmueller@gmail.com>"
-  ]; 
+  ];
 }
