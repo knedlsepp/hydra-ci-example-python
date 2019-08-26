@@ -8,17 +8,16 @@
 #   nix-shell --arg nixpkgs "<nixpkgs>"
 #   nix build --arg nixpkgs "<nixpkgs>"
 
-{ nixpkgs ? (builtins.fetchGit {
-    url = git://github.com/NixOS/nixpkgs-channels;
-    ref = "nixos-18.03";
-    rev = "08d245eb31a3de0ad73719372190ce84c1bf3aee";
+{ 
+  nixpkgs ? (builtins.fetchTarball {
+    url  = "https://github.com/NixOS/nixpkgs/archive/3924b344254350e4bee875a3353c1093e325743f.tar.gz";
+    sha256 = "0hyifn1bqy5hbjvvvh9jfqfvywq0b5qwizavi8wkrpcc989kacwn";
   })
 , getPythonVersion ? (p: p.python3Packages)
 , src ? builtins.fetchGit ./.
 }:
 let
-  overlays = [ ];
-  pkgs = import nixpkgs { inherit overlays; config = { }; };
+  pkgs = import nixpkgs { };
   pyPkgs = getPythonVersion pkgs;
 in with pkgs; pyPkgs.buildPythonPackage rec {
   name = "hydra-ci-example-python";
