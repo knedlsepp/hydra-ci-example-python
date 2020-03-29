@@ -27,6 +27,10 @@ in with pkgs; pyPkgs.buildPythonPackage rec {
     pandas
     pint
   ];
+  nativeBuildInputs = with pyPkgs; pkgs.lib.optionals (pkgs.lib.inNixShell) [
+    ipython
+    python-language-server
+  ];
 
   checkInputs = with pyPkgs; [
     pytest
