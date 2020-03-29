@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup
+from setuptools import setup, find_packages
 
 config = {
     'name': 'projectname',
@@ -7,9 +7,9 @@ config = {
     'author': 'My Name',
     'author_email': 'My email.',
     'description': 'My Project',
-    'packages': ['package_name'],
+    'packages': find_packages('src'),
     'package_dir': {
-        'package_name': 'package_name'
+        '': 'src'
     },
     'package_data': {
         'package_name': ['package_name/data/*']
