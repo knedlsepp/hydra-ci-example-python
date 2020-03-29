@@ -8,7 +8,7 @@
 #   nix-shell --arg nixpkgs "<nixpkgs>"
 #   nix build --arg nixpkgs "<nixpkgs>"
 
-{ 
+{
   nixpkgs ? (builtins.fetchTarball {
     url  = "https://github.com/NixOS/nixpkgs/archive/3924b344254350e4bee875a3353c1093e325743f.tar.gz";
     sha256 = "0hyifn1bqy5hbjvvvh9jfqfvywq0b5qwizavi8wkrpcc989kacwn";
